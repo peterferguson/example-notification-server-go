@@ -31,6 +31,6 @@ EXPOSE 5556
 
 COPY --from=builder /app/bin/notifications-server /usr/bin/
 
-ENTRYPOINT ["/usr/bin/notifications-server", "--api", "--xmtp-listener", "--xmtp-listener-tls"]
+ENTRYPOINT ["/usr/bin/notifications-server", "--api", "--xmtp-listener", "--xmtp-listener-tls", "-x", "grpc.dev.xmtp.network:443", "--apns-topic", "fun.onit.development"]
 # By default just show help if called without arguments
 CMD []
