@@ -225,7 +225,7 @@ func (l *Listener) refreshClient() error {
 }
 
 func shouldIgnoreTopic(topic string) bool {
-	if strings.HasPrefix(topic, "/xmtp/0/contact-") || strings.HasPrefix(topic, "/xmtp/0/privatestore-") {
+	if !strings.HasPrefix(topic, "/xmtp/mls/1") {
 		return true
 	}
 	return false
